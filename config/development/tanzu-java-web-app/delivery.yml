@@ -8,7 +8,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: tanzu-java-web-app
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: aaa
     app.kubernetes.io/component: run
     carto.run/workload-name: tanzu-java-web-app
 spec:
@@ -33,7 +33,7 @@ spec:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-java-web-app
         apps.tanzu.vmware.com/has-tests: "true"
-        apps.tanzu.vmware.com/workload-type: web
+        apps.tanzu.vmware.com/workload-type: aaa
         carto.run/workload-name: tanzu-java-web-app
         conventions.apps.tanzu.vmware.com/framework: spring-boot
         tanzu.app.live.view: "true"
@@ -45,7 +45,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor-repo.vmware.com/jeffataprepo/tanzu-java-web-app-development@sha256:1d5b51e1e9f73aee8f051d0c1929dfbc14be72d85931c468d8ea75e6cd28f98b
+        image: harbor-repo.vmware.com/jeffataprepo/tanzu-java-web-app-development@sha256:07e3a6a42b2206bba463457f5738e9a0e391cb220f083daf109d03eee0458655
         livenessProbe:
           httpGet:
             path: /livez
