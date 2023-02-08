@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/part-of: tanzu-java-web-app
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
-    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/workload-type: web-workload
     app.kubernetes.io/component: run
     carto.run/workload-name: tjwa
 spec:
@@ -36,7 +36,7 @@ spec:
         app.kubernetes.io/part-of: tanzu-java-web-app
         apps.tanzu.vmware.com/auto-configure-actuators: "true"
         apps.tanzu.vmware.com/has-tests: "true"
-        apps.tanzu.vmware.com/workload-type: web
+        apps.tanzu.vmware.com/workload-type: web-workload
         carto.run/workload-name: tjwa
         conventions.carto.run/framework: spring-boot
         tanzu.app.live.view: "true"
@@ -49,7 +49,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details="always" -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include="*" -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor-repo.vmware.com/jeffataprepo/tjwa-development@sha256:02287b1754e1adff5f1543d686dd10f37647240563aa74f05c87bd8cae0cabf9
+        image: harbor-repo.vmware.com/jeffataprepo/tjwa-development@sha256:55782e3aa1123538376e4672cf3f590a46ea06c16bd8f96a13be1b6cee3fffe6
         livenessProbe:
           httpGet:
             path: /livez
